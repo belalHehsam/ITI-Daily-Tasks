@@ -1,0 +1,173 @@
+body {
+  background-color: palevioletred;
+}
+.home-image {
+  text-align: center;
+}
+.headers {
+  text-align: center;
+}
+.diff_style {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.diff_size {
+  font-size: 12px;
+}
+.diff_color {
+  color: red;
+}
+
+.welcome_img {
+  width: 200px;
+}
+.div-for-img {
+  text-align: center;
+}
+.next {
+  text-align: end;
+}
+.socialmedia {
+  text-align: center;
+}
+.copy_right {
+  text-align: center;
+}
+
+/* Registeration Form*/
+#formDiv h1 {
+  text-decoration: underline;
+  text-align: center;
+}
+#formDiv table {
+  width: 500px;
+  margin: auto;
+}
+
+tr,
+td,
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+#formDiv table .inputs td input,
+#formDiv table .inputs td select {
+  width: 95%;
+  padding: 5px;
+}
+
+#formDiv .trHobbies td {
+  border: 0;
+}
+
+#formDiv table tr {
+  padding: 0;
+}
+
+#formDiv .interests,
+#formDiv .Bio {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#formDiv table tfoot {
+  text-align: center;
+}
+
+#formDiv table tfoot td button {
+  margin: 10px;
+}
+
+/* table inside Main Table */
+#hobbiesTable {
+  text-align: center;
+  border: 0;
+  width: 100%;
+}
+
+#hobbiesTable tr {
+  border: 0;
+  padding: 10px;
+}
+
+#hobbiesTable tr td input {
+  margin: 0;
+  padding: 0;
+}
+
+tfoot a {
+  text-decoration: none;
+  color: black;
+}
+
+/* login */
+#login {
+  background-color: #f7fbff;
+}
+
+#divLogin {
+  padding: 10px;
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#divLogin form {
+  padding: 30px;
+  font-size: 20px;
+}
+
+#divLogin form fieldset {
+  border: 3px solid #8cb9ff;
+  border-radius: 5px;
+  padding: 30px;
+  background-color: #f7fbff;
+}
+
+#divLogin form fieldset legend {
+  font-size: 24px;
+  color: darkred;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+#divLogin form fieldset label {
+  display: block;
+  font-weight: bold;
+  color: #5a2c2c;
+  margin-top: 10px;
+}
+
+#divLogin .remember {
+  display: inline;
+}
+
+#divLogin form fieldset .remember input {
+  display: inline;
+  width: 20px;
+  margin-top: 10px;
+}
+
+#divLogin form fieldset input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+}
+#divLogin form fieldset button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+#divLogin form fieldset .but {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+#divLogin button a {
+  text-decoration: none;
+  color: #5a2c2c;
+}

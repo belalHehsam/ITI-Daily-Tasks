@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration page</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body id="login">
+
+
+    <div id="formDiv">
+
+        <form action="page2.html">
+
+            <h1>Registration Form</h1>
+
+            <table>
+
+                <!-- fname -->
+                <tr class="inputs">
+                    <td> <label for="firstname"> first Name :</label></td>
+                    <td><input id="firstname" type="text" name="Fname" placeholder="Enter Your First Name"></td>
+                </tr>
+
+                <!-- lastname -->
+                <tr class="inputs">
+                    <td> <label for="lastname"> Last Name :</label></td>
+                    <td><input id="lastname" type="text" name="Lname" placeholder="Enter Your Last Name"></td>
+                </tr>
+                <!-- Email -->
+                <tr class="inputs">
+                    <td> <label for="Email"> Email :</label></td>
+                    <td><input id="Email" type="email" name="Email" placeholder="Enter Your Email"></td>
+                </tr>
+                <!-- Password -->
+                <tr class="inputs">
+                    <td> <label for="pass"> Password :</label></td>
+                    <td><input id="pass" type="password" name="password" placeholder="Enter Your Password"></td>
+                </tr>
+                <!-- Gender -->
+                <tr>
+                    <td rowspan="2"> <label for="gender"> Gender :</label></td>
+                    <td>
+                        <input id="mgender" type="radio" name="Gender" value="male">
+                        <label for="mgender"> Male</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input id="fgender" type="radio" name="Gender" value="female">
+                        <label for="fgender">Female</label>
+                    </td>
+                </tr>
+
+                <!-- Country -->
+
+                <tr class="inputs">
+                    <td>
+                        <label for="country">Country :</label>
+                    </td>
+                    <td>
+
+                        <select id="country" name="Country">
+
+                            <option value="" disabled selected>Select a Country ..</option>
+
+                            <optgroup label="Africa">
+                                <option value="Egypt">Egypt</option>
+                                <option value="Sudan">Sudan</option>
+                                <option value="Libya">Libya</option>
+                                <option value="Tunisia">Tunisia</option>
+                                <option value="Moroco">Moroco</option>
+                            </optgroup>
+                            <optgroup label="Europe" disabled>
+                                <option value="Italy">Italy</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="Spain">Spain</option>
+                            </optgroup>
+                            <optgroup label="Asia">
+                                <option value="Palestine">Palestine</option>
+                                <option value="South Korea">South Korea</option>
+                                <option value="India">India</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Birthday -->
+                <tr class="inputs">
+                    <td>
+                        <label for="bdate">Birthday</label>
+                    </td>
+                    <td>
+                        <input type="date" id="bdate" name="Birthday">
+                    </td>
+                </tr>
+                <!-- intersetes -->
+                <tr class="interests">
+                    <u>
+                        <td colspan="2">Interests</td>
+                    </u>
+                </tr>
+
+                <tr class="trHobbies">
+                    <td colspan="2">
+                        <table id="hobbiesTable">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="hobby" id="sports" value="sports">
+                                    <label for="sports">Sports</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="hobby" id="Music" value="Music">
+                                    <label for="Music">Music</label>
+
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="hobby" id="Fashion" value="Fashion">
+                                    <label for="Fashion">Fashion</label>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" id="Reading" value="Reading">
+                                    <label for="Reading">Reading</label>
+
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="Shopping" value="Shopping">
+                                    <label for="Shopping">Shopping</label>
+
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="Movies" value="Movies">
+                                    <label for="Movies">Movies</label>
+
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+
+                </tr>
+
+                <tr class="Bio">
+                    <u>
+                        <td colspan="2">Bio</td>
+                    </u>
+                </tr>
+                <!-- text area -->
+                <tr>
+                    <td colspan="2">
+                        <textarea name="" id="" cols="70" rows="10"></textarea>
+                    </td>
+                </tr>
+
+                <tfoot>
+
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit"> Register</button>
+                            <button type="reset">Clear</button>
+
+                        </td>
+                    </tr>
+
+                </tfoot>
+
+
+
+            </table>
+
+        </form>
+
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
