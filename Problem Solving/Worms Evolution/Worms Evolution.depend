@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1767564835 source:b:\iti\problem solving\session 1\worms evolution\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+

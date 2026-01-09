@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1765660989 source:b:\iti\problem solving\removeelement\removeelement\main.cpp
+	<iostream>
+	"vector"
+	"algorithm"
+

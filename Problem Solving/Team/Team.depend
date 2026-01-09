@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1767446264 source:b:\iti\problem solving\team\main.cpp
+	<iostream>
+	<vector>
+

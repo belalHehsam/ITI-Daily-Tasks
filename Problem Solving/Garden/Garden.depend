@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1767449231 source:b:\iti\problem solving\garden\main.cpp
+	<iostream>
+	<vector>
+
