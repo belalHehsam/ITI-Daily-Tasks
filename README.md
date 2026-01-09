@@ -87,13 +87,13 @@
 Feel free to explore the code, provide feedback, or connect with me!
 
 <p align="left">
-  <a href="https://linkedin.com/in/YOUR_LINKEDIN_HERE">
+  <a href="https://linkedin.com/in/belal-hesham-611609210">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn">
   </a>
-  <a href="https://github.com/YOUR_GITHUB_HERE">
+  <a href="https://github.com/belalHehsam">
     <img src="https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github" alt="GitHub">
   </a>
 </p>
 
 <br />
-<p align="center"><i>Last Updated: January 2026 | Created by Belal Hesham</i></p>
+<p align="center"><i> Created by Belal Hesham</i></p>
