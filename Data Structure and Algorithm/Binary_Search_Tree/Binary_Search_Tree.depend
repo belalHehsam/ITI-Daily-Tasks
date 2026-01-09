@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1765467351 source:b:\iti\ds&algorithm\day3\lab3\binary_search_tree\main.cpp
+	<iostream>
+	"Empolyee.h"
+	"Node.h"
+	"vector"
+
+1765397971 b:\iti\ds&algorithm\day3\lab3\binary_search_tree\empolyee.h
+	<iostream>
+
+1765397880 source:b:\iti\ds&algorithm\day3\lab3\binary_search_tree\employee.cpp
+	"Empolyee.h"
+
+1765398382 b:\iti\ds&algorithm\day3\lab3\binary_search_tree\node.h
+	"Empolyee.h"
+
+1765398291 source:b:\iti\ds&algorithm\day3\lab3\binary_search_tree\node.cpp
+	"Node.h"
+	"Empolyee.h"
+
