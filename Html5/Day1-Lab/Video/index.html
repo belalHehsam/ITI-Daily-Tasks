@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <section id="video-wrapper">
+
+        <!-- video -->
+        <video id="Video">
+            <source src="frozen.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- video scrubber-->
+        <div id="scrubber">
+            <input type="range" id="scrubber-slider" value="0" min="0" max="100" step="1" />
+        </div>
+
+
+        <!-- control buttons -->
+        <div class="control-btns">
+
+            <div class="right">
+                <button id="play-btn">
+                    <span class="fa-solid fa-play show" id="playIcon"></span>
+                    <span class="hide fa-solid fa-pause" id="pauseIcon"></span>
+                </button>
+                <button id="forward"><span class="fa-solid fa-forward"></span></button>
+                <button id="end"><span class="fa-solid fa-chevron-right"></span></button>
+                <button id="start"><span class="fa-solid fa-chevron-left"></span></button>
+                <button id="backword"><span class="fa-solid fa-backward"></span></button>
+            </div>
+            <div class="left">
+                <span id="vloumIcon" class="fa-solid fa-volume-high"></span>
+                <button id="mute">
+                    <span class="fa-solid fa-volume-xmark" id="muteIcon"></span>
+                    <span id="muteWord" style="font-size: 12px;"> Mute</span>
+                </button>
+                <button id="volume" class="hide">
+                    <input type="range" class="vertical" name="volume" value="0.5" id="volume-slider" min="0" max="1"
+                        step="0.1" />
+                </button>
+                <button id="full-screen">
+                    <span class="fa-solid fa-expand"></span>
+                </button>
+            </div>
+
+            <div id="speed">
+                <span class="fa-solid fa-gauge" id="speedIcon"> </span>
+                <input type="range" class="hide" name="speed" value="1" id="speed-slider" min="0.5" max="2"
+                    step="0.5" />
+            </div>
+            <div id="time">
+                <span id="crntTime"> </span>
+                <span>/</span>
+                <span id="fulltime"> </span>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

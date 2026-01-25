@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Line Animation</title>
+    <style>
+        canvas {
+            background: white;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+
+        const startX = 0;
+        const startY = 0;
+
+
+        const endX = canvas.width;
+        const endY = canvas.height;
+
+        let progress = 0;
+        const speed = 0.01;
+
+        function drawLine() {
+
+            const currentX = startX + (endX - startX) * progress;
+            const currentY = startY + (endY - startY) * progress;
+
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(currentX, currentY);
+            ctx.strokeStyle = "darkred";
+            ctx.lineWidth = 5;
+            ctx.stroke();
+
+            progress += speed;
+
+            if (progress <= 1) {
+                requestAnimationFrame(drawLine);
+            } else {
+                alert("animation end");
+            }
+        }
+
+        drawLine();
+    </script>
+
+</body>
+
+</html>
