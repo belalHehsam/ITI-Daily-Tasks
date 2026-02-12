@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/main.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 class="title">To Do List</h1>
+
+        <div class="card">
+
+            <h2>Add New Task</h2>
+
+            <form>
+
+                <div class="input-group">
+                    <label>Task Title</label>
+                    <input type="text" placeholder="Enter your task..." id="taskName">
+                </div>
+
+                <div class="time-group">
+                    <div>
+                        <label>Hours</label>
+                        <input type="number" placeholder="HH" id="hours">
+                    </div>
+
+                    <div>
+                        <label>Minutes</label>
+                        <input type="number" placeholder="MM" id="minuts">
+                    </div>
+                </div>
+
+                <div class="date-group">
+
+                    <input type="date" min="2020-01-01" max="2030-12-31" name="trip-start" id="startDate">
+
+                </div>
+
+                <button class="btn" type="button" id="addTask">
+                    Add Task
+                </button>
+
+                <button type="button" class="notificationBtn" id="notificationBtn">
+                    Enable Notification
+                </button>
+            </form>
+
+
+        </div>
+
+        <div class="tasks">
+            <h3>Tasks </h3>
+            <hr>
+            .....
+        </div>
+    </div>
+
+    <script src="idb.js"></script>
+    <script src="script_Sw.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

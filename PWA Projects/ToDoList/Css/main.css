@@ -1,0 +1,163 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body */
+body {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container */
+.container {
+  width: 500px;
+  animation: fadeIn 3s ease-in-out;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  color: #ff7a00;
+  margin-bottom: 30px;
+  font-size: 40px;
+  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+}
+
+/* Card */
+.card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 122, 0, 0.4);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255, 122, 0, 0.6);
+}
+
+.card h2 {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input Groups */
+.input-group,
+.time-group,
+.date-group {
+  margin-bottom: 20px;
+}
+
+.input-group label,
+.time-group label {
+  display: block;
+  color: #ff7a00;
+  margin-bottom: 5px;
+}
+
+/* Inputs */
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #333;
+  background: #222;
+  color: white;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #ff7a00;
+  box-shadow: 0 0 10px #ff7a00;
+  outline: none;
+}
+
+/* Time Inputs Layout */
+.time-group {
+  display: flex;
+  gap: 15px;
+}
+
+.time-group div {
+  flex: 1;
+}
+
+/* Date Layout */
+.date-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff7a00;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.notificationBtn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background-color: transparent;
+  border: 2px solid #ff7a00;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.notificationBtn:hover {
+  background-color: #ff7a00;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tasks {
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  background-color: #ff7a00;
+  margin-top: 20px;
+  display: none;
+}

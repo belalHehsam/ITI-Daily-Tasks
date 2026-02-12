@@ -1,0 +1,11 @@
+body {
+  background-color: beige;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+button {
+  padding: 10px;
+  background-color: brown;
+}
