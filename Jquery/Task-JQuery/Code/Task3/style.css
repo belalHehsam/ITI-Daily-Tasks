@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+}
+#container {
+  width: 50%;
+  height: 600px;
+  border: 2px solid gold;
+  position: relative;
+  overflow: hidden;
+}
+
+.catContainer {
+  width: 120px;
+  height: 160px;
+  background: #ffd500;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  cursor: grab;
+  z-index: 1;
+}
+
+.catContainer img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  pointer-events: none;
+  display: block;
+}
+
+.holeContainer {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  z-index: 2;
+}
+
+#hole {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 60px;
+  bottom: 40px;
+}
