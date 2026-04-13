@@ -1,0 +1,1 @@
+{"version":3,"file":"IGame.d.ts","sourceRoot":"","sources":["../../src/interfaces/IGame.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,YAAY,CAAC;AAExC,MAAM,WAAW,KAAK;IAClB,KAAK,EAAE,KAAK,EAAE,CAAC;IACf,YAAY,EAAE,KAAK,EAAE,CAAC;IACtB,YAAY,EAAE,MAAM,CAAC;CACxB"}

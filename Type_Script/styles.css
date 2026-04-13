@@ -1,0 +1,327 @@
+:root {
+  --glass-bg: rgba(10, 15, 30, 0.8);
+  --glass-border: rgba(
+    212,
+    175,
+    55,
+    0.3
+  ); /* changed color for Marvel theme (subtle gold glass edge) */
+  --marvel-red: #ed1d24; /* added new variable for Marvel theme */
+  --marvel-blue: #002d62; /* added new variable for Marvel theme */
+  --marvel-gold: #d4af37; /* added new variable for Marvel theme */
+  --primary-color: var(
+    --marvel-gold
+  ); /* changed color for Marvel theme (now points to Gold) */
+  --text-light: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  background: linear-gradient(-45deg, #0b0b0f, #1a0000, #8b0000, #0b0b0f);
+
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+
+  color: var(--text-light);
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.game-container {
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(237, 29, 36, 0.3);
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.game-header h1 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.stats {
+  margin-bottom: 20px;
+}
+
+.progress-wrapper {
+  width: 100%;
+  background-color: #002d62;
+  height: 10px;
+  border-radius: 50px;
+  margin-bottom: 50px;
+}
+
+.progress-wrapper .progress-bar {
+  width: 20%;
+  background-color: #740000;
+  height: 10px;
+  border-radius: 20px;
+}
+
+.progress-degree {
+  font-size: 20px;
+}
+
+/* Grid Layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.card {
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* The Flip Action */
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* The Match Action (Makes the card pulse or stay flipped) */
+.card.matched {
+  cursor: default;
+  pointer-events: none; /*Prevents clicking matched cards */
+  opacity: 0.8;
+}
+
+.card.matched .card-inner {
+  transform: rotateY(180deg) scale(0.95);
+}
+
+/* Shared Front/Back Styles */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden; /* Ensures images respect border radius */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+  background-color: var(--marvel-red);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  border: 2px solid var(--primary-color);
+  background-color: var(--marvel-red);
+}
+
+/* Image Handling */
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive Rules */
+@media (max-width: 992px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- UPDATED START OVERLAY --- */
+.start {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(5, 10, 30, 0.85); /* Deep cinematic Marvel blue tint */
+  backdrop-filter: blur(8px); /* AAA game depth effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 7rem;
+}
+
+.start .startGame {
+  background: linear-gradient(
+    145deg,
+    rgba(20, 20, 20, 0.95),
+    rgba(40, 5, 5, 0.95)
+  );
+
+  border: 2px solid var(--marvel-red);
+  box-shadow:
+    0 0 40px rgba(237, 29, 36, 0.3),
+    inset 0 0 20px rgba(237, 29, 36, 0.2);
+  padding: 50px 40px;
+  width: 90%;
+  max-width: 630px; /* Responsive width instead of fixed 20% */
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  /* Typography formatting for the loose "Hello" text */
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  text-shadow: 0 0 15px rgba(237, 29, 36, 0.6);
+
+  /* Cinematic entrance animation */
+  animation: cinematicEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.startGame p {
+  font-size: 16px;
+}
+
+.startBtn {
+  background: linear-gradient(90deg, #8a0000, var(--marvel-red), #8a0000);
+  background-size: 200% auto;
+  color: var(--text-light);
+  border: 1px solid #ff4d4d;
+  padding: 16px 50px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(237, 29, 36, 0.5);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.startBtn:hover {
+  background-position: right center;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow:
+    0 10px 30px rgba(237, 29, 36, 0.8),
+    0 0 15px rgba(212, 175, 55, 0.3);
+  border-color: var(--marvel-gold);
+}
+
+.startBtn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px rgba(237, 29, 36, 0.5);
+}
+
+@keyframes cinematicEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.congratulations {
+  background: linear-gradient(
+    145deg,
+    rgba(20, 20, 20, 0.95),
+    rgba(40, 5, 5, 0.95)
+  );
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  z-index: 999;
+}
+.d-none {
+  display: none;
+}
+
+.divCongratulation {
+  background: linear-gradient(
+    145deg,
+    rgba(20, 20, 20, 0.95),
+    rgba(149, 22, 22, 0.95)
+  );
+  border-radius: 20px;
+  padding: 60px;
+  color: white;
+  position: fixed;
+  left: 50%;
+  bottom: -300px;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.divCongratulation.show {
+  animation: slideUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -300px;
+    opacity: 0;
+  }
+  60% {
+    bottom: 55%;
+    opacity: 1;
+  }
+  80% {
+    bottom: 48%;
+  }
+  100% {
+    bottom: 50%;
+    opacity: 1;
+  }
+}

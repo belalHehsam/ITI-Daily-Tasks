@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Memory Match</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="start">
+        <div class="startGame">
+            <h1>MEMORY CHALLENGE</h1>
+            <p>Test your focus.
+                Match all pairs before time runs out.</p>
+            <button class="startBtn">Start</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+
+        <header class="game-header">
+            <h1>Memory Game</h1>
+            <div class="stats">Find all the matching pairs!</div>
+            <div class="progress-wrapper">
+                <div class="progress-bar"></div>
+                <div class="progress-degree">
+                    10%
+                </div>
+            </div>
+
+        </header>
+
+        <main class="card-grid">
+
+        </main>
+
+    </div>
+
+    <div class="congratulations d-none">
+        <div class="divCongratulation">
+            <h1>🎉 YOU WIN 🎉</h1>
+            <button class="startBtn againBtn">Start Again</button>
+        </div>
+    </div>
+
+    <script type="module" src="./dist/index.js"></script>
+</body>
+
+</html>
