@@ -1,0 +1,26 @@
+{
+    "brand": {
+        "name": "أخبار التقنية"
+    },
+    "navigation": {
+        "home": "الرئيسية",
+        "addNews": "إضافة خبر",
+        "login": "تسجيل الدخول",
+        "register": "إنشاء حساب",
+        "signout": "تسجيل الخروج"
+    },
+    "search": {
+        "placeholder": "ابحث عن الأخبار..."
+    },
+    "actions": {
+        "subscribe": "اشترك",
+        "toggleMenu": "فتح القائمة"
+    },
+    "toast": {
+        "logoutSuccess": "تم تسجيل الخروج بنجاح"
+    },
+    "language": {
+        "english": "English",
+        "arabic": "العربية"
+    }
+}

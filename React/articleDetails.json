@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "author": "TechNews Team",
+    "content": "NVIDIA has introduced a groundbreaking AI chip architecture designed to significantly enhance both training and inference workloads.",
+    "sections": [
+      {
+        "heading": "What’s New",
+        "text": "The new chips use advanced tensor cores and improved memory bandwidth."
+      },
+      {
+        "heading": "Performance",
+        "text": "Benchmarks show up to 2x performance improvement compared to previous generation."
+      }
+    ],
+    "tags": [
+      "AI",
+      "NVIDIA",
+      "Hardware"
+    ],
+    "image": "../src/assets/11.jfif"
+  },
+  {
+    "id": 2,
+    "author": "Cyber Desk",
+    "content": "A global cyber attack has targeted major tech firms using zero-day vulnerabilities.",
+    "sections": [
+      {
+        "heading": "Attack Vector",
+        "text": "The attackers exploited unknown vulnerabilities in enterprise systems."
+      },
+      {
+        "heading": "Impact",
+        "text": "Multiple companies reported data breaches and downtime."
+      }
+    ],
+    "tags": [
+      "Security",
+      "Hacking"
+    ],
+    "image": "../src/assets/22.jfif"
+  },
+  {
+    "id": 3,
+    "author": "Gadget Insider",
+    "content": "Apple unveiled the new Watch Series 10 with major health improvements.",
+    "sections": [
+      {
+        "heading": "Design",
+        "text": "Slimmer body with improved display."
+      },
+      {
+        "heading": "Battery",
+        "text": "Battery lasts up to 36 hours."
+      }
+    ],
+    "tags": [
+      "Apple",
+      "Wearables"
+    ],
+    "image": "../src/assets/33.jfif"
+  },
+  {
+    "id": 4,
+    "author": "Dev News",
+    "content": "Microsoft introduced Copilot+ tools to assist developers.",
+    "sections": [
+      {
+        "heading": "AI Assistance",
+        "text": "Helps generate code and debug faster."
+      }
+    ],
+    "tags": [
+      "Microsoft",
+      "AI"
+    ],
+    "image": "../src/assets/44.jfif"
+  },
+  {
+    "id": 5,
+    "author": "Space Reporter",
+    "content": "SpaceX successfully launched Starship achieving a new milestone.",
+    "sections": [
+      {
+        "heading": "Mission",
+        "text": "Test flight validated new propulsion system."
+      }
+    ],
+    "tags": [
+      "SpaceX",
+      "Space"
+    ],
+    "image": "../src/assets/55.jfif"
+  },
+  {
+    "id": 6,
+    "author": "Cloud Team",
+    "content": "AWS released new cloud services focused on AI and scalability.",
+    "sections": [
+      {
+        "heading": "New Tools",
+        "text": "Includes AI APIs and serverless improvements."
+      }
+    ],
+    "tags": [
+      "AWS",
+      "Cloud"
+    ],
+    "image": "../src/assets/66.jfif"
+  }
+]

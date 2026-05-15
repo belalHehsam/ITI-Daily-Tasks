@@ -1,0 +1,28 @@
+{
+    "header": {
+        "badge": "تسجيل الدخول",
+        "title": "مرحبًا بعودتك",
+        "subtitle": "يرجى إدخال بياناتك للوصول إلى حسابك."
+    },
+    "fields": {
+        "email": {
+            "label": "البريد الإلكتروني",
+            "placeholder": "أدخل بريدك الإلكتروني"
+        },
+        "password": {
+            "label": "كلمة المرور",
+            "placeholder": "••••••••"
+        }
+    },
+    "actions": {
+        "login": "تسجيل الدخول",
+        "createAccount": "إنشاء حساب"
+    },
+    "footer": {
+        "newHere": "جديد هنا؟"
+    },
+    "toast": {
+        "unauthorized": "يجب عليك تسجيل الدخول أولاً",
+        "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة"
+    }
+}

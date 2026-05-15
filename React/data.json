@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "category": "Artificial Intelligence",
+    "title": "NVIDIA Announces Next-Gen AI Chips for 2025",
+    "description": "New architecture delivers massive performance boosts for AI training and inference.",
+    "image": "../src/assets/11.jfif",
+    "date": "May 24, 2025",
+    "readTime": "5 min read"
+  },
+  {
+    "id": 2,
+    "category": "Cybersecurity",
+    "title": "Global Cyber Attack Targets Major Tech Companies",
+    "description": "A coordinated attack exploited zero-day vulnerabilities in enterprise systems.",
+    "image": "../src/assets/22.jfif",
+    "date": "May 23, 2025",
+    "readTime": "4 min read"
+  },
+  {
+    "id": 3,
+    "category": "Gadgets",
+    "title": "Apple Watch Series 10 Officially Revealed",
+    "description": "New health features, longer battery life, and a slimmer design.",
+    "image": "../src/assets/33.jfif",
+    "date": "May 22, 2025",
+    "readTime": "3 min read"
+  },
+  {
+    "id": 4,
+    "category": "Software",
+    "title": "Microsoft Introduces Copilot+ for Windows Developers",
+    "description": "AI-powered tools to supercharge coding and productivity.",
+    "image": "../src/assets/44.jfif",
+    "date": "May 21, 2025",
+    "readTime": "6 min read"
+  },
+  {
+    "id": 5,
+    "category": "Startups",
+    "title": "SpaceX Launches Starship With New Milestone",
+    "description": "Successful test flight brings humanity one step closer to Mars.",
+    "image": "../src/assets/55.jfif",
+    "date": "May 20, 2025",
+    "readTime": "4 min read"
+  },
+  {
+    "id": 6,
+    "category": "Cloud",
+    "title": "AWS Unveils New Cloud Services and AI Tools",
+    "description": "Designed to help businesses build faster with scalable and secure solutions.",
+    "image": "../src/assets/66.jfif",
+    "date": "May 19, 2025",
+    "readTime": "5 min read"
+  }
+]

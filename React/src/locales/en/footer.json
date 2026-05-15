@@ -1,0 +1,43 @@
+{
+    "brand": {
+        "name": "TechNews",
+        "tagline": "Your daily source for the latest in tech, AI, cybersecurity, and innovation."
+    },
+    "social": {
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
+        "rss": "RSS"
+    },
+    "categories": {
+        "title": "Categories",
+        "items": {
+            "artificialIntelligence": "Artificial Intelligence",
+            "cybersecurity": "Cybersecurity",
+            "networking": "Networking",
+            "dataScience": "Data Science",
+            "cloud": "Cloud",
+            "startups": "Startups"
+        }
+    },
+    "company": {
+        "title": "Company",
+        "links": {
+            "aboutUs": "About Us",
+            "writeForUs": "Write for Us",
+            "advertise": "Advertise",
+            "contact": "Contact"
+        }
+    },
+    "newsletter": {
+        "title": "Stay Updated",
+        "description": "Get the top tech stories delivered to your inbox every week.",
+        "placeholder": "your@email.com"
+    },
+    "footer": {
+        "copyright": "All rights reserved.",
+        "developedBy": "Developed with by",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service"
+    }
+}

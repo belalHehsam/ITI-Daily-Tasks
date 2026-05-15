@@ -1,0 +1,160 @@
+/* ─── Card Grid (applied on CardList) ─────────────────────────── */
+.cards-grid {
+  width: 90%;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Individual Card ──────────────────────────────────────────── */
+.news-card {
+  background: var(--gradient-bg);
+  border: 1px solid var(--color-glass);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background var(--transition-theme);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 12px 40px rgba(0, 229, 255, 0.12),
+    0 4px 20px rgba(0, 0, 0, 0.3);
+  border-color: var(--color-primary-dark);
+}
+
+/* ─── Image Section ────────────────────────────────────────────── */
+.news-card__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+}
+
+.news-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.news-card:hover .news-card__image {
+  transform: scale(1.06);
+}
+
+/* Category Badge */
+.news-card__category {
+  position: absolute;
+  top: 12px;
+  inset-inline-start: 12px;
+  background: var(--color-glass);
+  border: 1px solid var(--color-primary-dark);
+  color: var(--color-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+  transition: color var(--transition-theme), border-color var(--transition-theme);
+}
+
+/* ─── Card Body ────────────────────────────────────────────────── */
+.news-card__body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.news-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color var(--transition-theme);
+}
+
+.news-card__description {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  transition: color var(--transition-theme);
+}
+
+/* ─── Meta Row ─────────────────────────────────────────────────── */
+.news-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-glass);
+}
+
+.news-card__date,
+.news-card__read-time {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition-theme);
+}
+
+/* ─── Read More Button ─────────────────────────────────────────── */
+.news-card__btn {
+  margin: 5px;
+  padding: 9px 18px;
+  background: transparent;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 7px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.news-card__btn:hover {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.4);
+}

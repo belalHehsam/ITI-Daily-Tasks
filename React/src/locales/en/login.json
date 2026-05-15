@@ -1,0 +1,28 @@
+{
+    "header": {
+        "badge": "Login",
+        "title": "Welcome Back",
+        "subtitle": "Please enter your credentials to access your account."
+    },
+    "fields": {
+        "email": {
+            "label": "Email",
+            "placeholder": "Enter Your Email"
+        },
+        "password": {
+            "label": "Password",
+            "placeholder": "••••••••"
+        }
+    },
+    "actions": {
+        "login": "Login",
+        "createAccount": "Create an account"
+    },
+    "footer": {
+        "newHere": "New here?"
+    },
+    "toast": {
+        "unauthorized": "You must login first",
+        "invalidCredentials": "Invalid email or password"
+    }
+}

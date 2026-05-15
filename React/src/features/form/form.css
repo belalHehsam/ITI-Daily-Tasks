@@ -1,0 +1,164 @@
+/* ─── Section Wrapper ──────────────────────────────────────────── */
+.form-section {
+  width: 90%;
+  margin: 50px auto;
+}
+
+/* ─── Glassmorphism Card ───────────────────────────────────────── */
+.form-card {
+  background: var(--gradient-bg);
+  border: 1px solid var(--color-glass);
+  border-radius: 18px;
+  padding: 44px 48px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--color-glass);
+  max-width: 780px;
+  margin: 0 auto;
+  transition: background var(--transition-theme), border-color var(--transition-theme);
+}
+
+/* ─── Header ───────────────────────────────────────────────────── */
+.form-header {
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-header__badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 4px 12px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 4px;
+  color: var(--color-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color var(--transition-theme), border-color var(--transition-theme);
+}
+
+.form-header__title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0;
+  transition: color var(--transition-theme);
+}
+
+.form-header__subtitle {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  transition: color var(--transition-theme);
+}
+
+/* ─── Form Layout ──────────────────────────────────────────────── */
+.news-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Side-by-side row */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ─── Form Group ───────────────────────────────────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color var(--transition-theme);
+}
+
+/* Shared input / select / textarea styles */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--color-glass);
+  border: 1px solid var(--color-glass);
+  border-radius: 9px;
+  padding: 12px 16px;
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background var(--transition-theme), color var(--transition-theme);
+  width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-group select option {
+  background: var(--color-nav-bg);
+  color: var(--color-text-primary);
+}
+
+/* Date picker icon color */
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5);
+  cursor: pointer;
+}
+
+/* Focus state */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primary);
+  background: var(--color-glass);
+  box-shadow: 0 0 0 3px var(--color-glass);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* ─── Submit Button ────────────────────────────────────────────── */
+.form-submit {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 13px 32px;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-weight: 700;
+  font-size: 0.92rem;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.form-submit:hover {
+  background: var(--color-primary-light);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+/* ─── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .form-card {
+    padding: 28px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

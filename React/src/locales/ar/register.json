@@ -1,0 +1,35 @@
+{
+    "header": {
+        "badge": "إنشاء حساب",
+        "title": "إنشاء حساب جديد",
+        "subtitle": "انضم إلى مجتمع التقنية لدينا وابدأ في نشر الأخبار."
+    },
+    "fields": {
+        "firstName": {
+            "label": "الاسم الأول",
+            "placeholder": "الاسم الأول"
+        },
+        "lastName": {
+            "label": "اسم العائلة",
+            "placeholder": "اسم العائلة"
+        },
+        "email": {
+            "label": "البريد الإلكتروني",
+            "placeholder": "email@example.com"
+        },
+        "password": {
+            "label": "كلمة المرور",
+            "placeholder": "••••••••"
+        }
+    },
+    "actions": {
+        "createAccount": "إنشاء الحساب",
+        "login": "تسجيل الدخول"
+    },
+    "footer": {
+        "alreadyHaveAccount": "لديك حساب بالفعل؟"
+    },
+    "toast": {
+        "registrationSuccess": "تم إنشاء الحساب بنجاح"
+    }
+}

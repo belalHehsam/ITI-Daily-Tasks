@@ -1,0 +1,35 @@
+{
+    "header": {
+        "badge": "Register",
+        "title": "Create an Account",
+        "subtitle": "Join our tech community to start publishing news."
+    },
+    "fields": {
+        "firstName": {
+            "label": "First Name",
+            "placeholder": "First name"
+        },
+        "lastName": {
+            "label": "Last Name",
+            "placeholder": "Last name"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "email@example.com"
+        },
+        "password": {
+            "label": "Password",
+            "placeholder": "••••••••"
+        }
+    },
+    "actions": {
+        "createAccount": "Create Account",
+        "login": "Login"
+    },
+    "footer": {
+        "alreadyHaveAccount": "Already have an account?"
+    },
+    "toast": {
+        "registrationSuccess": "Registration successful"
+    }
+}

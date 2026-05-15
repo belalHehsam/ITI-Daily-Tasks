@@ -1,0 +1,25 @@
+.form-footer {
+  margin-top: 24px;
+  text-align: center;
+  border-top: 1px solid var(--color-glass);
+  padding-top: 20px;
+  transition: border-color var(--transition-theme);
+}
+
+.form-footer p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  transition: color var(--transition-theme);
+}
+
+.form-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.form-link:hover {
+  color: var(--color-primary-light);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}

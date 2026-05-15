@@ -1,0 +1,45 @@
+{
+    "header": {
+        "badge": "NEW ARTICLE",
+        "title": "Publish a News Story",
+        "subtitle": "Fill in the details below to add a new tech article."
+    },
+    "fields": {
+        "category": {
+            "label": "Category",
+            "placeholder": "Select a category",
+            "options": {
+                "artificialIntelligence": "Artificial Intelligence",
+                "cybersecurity": "Cybersecurity",
+                "gadgets": "Gadgets",
+                "software": "Software",
+                "cloud": "Cloud",
+                "startups": "Startups",
+                "networking": "Networking",
+                "dataScience": "Data Science"
+            }
+        },
+        "readTime": {
+            "label": "Read Time",
+            "placeholder": "e.g. 5 min read"
+        },
+        "title": {
+            "label": "Title",
+            "placeholder": "Enter the article headline…"
+        },
+        "description": {
+            "label": "Description",
+            "placeholder": "Write a short summary of the article…"
+        },
+        "image": {
+            "label": "Image URL",
+            "placeholder": "https://example.com/image.jpg"
+        },
+        "date": {
+            "label": "Publish Date"
+        }
+    },
+    "actions": {
+        "publish": "Publish Article"
+    }
+}

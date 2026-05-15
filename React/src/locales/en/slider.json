@@ -1,0 +1,25 @@
+{
+    "slides": {
+        "featured": {
+            "badge": "FEATURED",
+            "title": "OpenAI Unveils GPT-5:",
+            "subtitle": "A New Leap in AI Intelligence",
+            "description": "OpenAI's latest model promises better reasoning, real-time learning, and unmatched performance across industries."
+        },
+        "quantum": {
+            "badge": "TRENDING",
+            "title": "Quantum Computing Breaks",
+            "subtitle": "The 1000-Qubit Barrier",
+            "description": "Researchers achieve a historic milestone in quantum processing power, opening doors to drug discovery and cryptography."
+        },
+        "cybersecurity": {
+            "badge": "LATEST",
+            "title": "Cybersecurity in 2025:",
+            "subtitle": "AI-Powered Threat Detection",
+            "description": "Next-gen security platforms now leverage machine learning to detect zero-day exploits before they strike."
+        }
+    },
+    "actions": {
+        "readFullStory": "Read Full Story"
+    }
+}

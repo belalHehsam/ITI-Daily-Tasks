@@ -1,0 +1,43 @@
+{
+    "brand": {
+        "name": "تيك نيوز",
+        "tagline": "مصدرُك اليومي لأحدث أخبار التقنية والذكاء الاصطناعي والأمن السيبراني والابتكار."
+    },
+    "social": {
+        "twitter": "تويتر",
+        "linkedin": "لينكد إن",
+        "github": "جيت هاب",
+        "rss": "خلاصة RSS"
+    },
+    "categories": {
+        "title": "التصنيفات",
+        "items": {
+            "artificialIntelligence": "الذكاء الاصطناعي",
+            "cybersecurity": "الأمن السيبراني",
+            "networking": "الشبكات",
+            "dataScience": "علوم البيانات",
+            "cloud": "الحوسبة السحابية",
+            "startups": "الشركات الناشئة"
+        }
+    },
+    "company": {
+        "title": "الشركة",
+        "links": {
+            "aboutUs": "من نحن",
+            "writeForUs": "اكتب لنا",
+            "advertise": "الإعلان",
+            "contact": "تواصل معنا"
+        }
+    },
+    "newsletter": {
+        "title": "ابقَ على اطلاع",
+        "description": "احصل على أهم أخبار التقنية في بريدك الإلكتروني كل أسبوع.",
+        "placeholder": "your@email.com"
+    },
+    "footer": {
+        "copyright": "جميع الحقوق محفوظة.",
+        "developedBy": "تم التطوير بواسطة",
+        "privacyPolicy": "سياسة الخصوصية",
+        "termsOfService": "شروط الخدمة"
+    }
+}

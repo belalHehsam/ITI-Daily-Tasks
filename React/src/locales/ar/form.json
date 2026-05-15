@@ -1,0 +1,45 @@
+{
+    "header": {
+        "badge": "مقال جديد",
+        "title": "نشر خبر جديد",
+        "subtitle": "املأ التفاصيل التالية لإضافة مقال تقني جديد."
+    },
+    "fields": {
+        "category": {
+            "label": "التصنيف",
+            "placeholder": "اختر تصنيفًا",
+            "options": {
+                "artificialIntelligence": "الذكاء الاصطناعي",
+                "cybersecurity": "الأمن السيبراني",
+                "gadgets": "الأجهزة",
+                "software": "البرمجيات",
+                "cloud": "الحوسبة السحابية",
+                "startups": "الشركات الناشئة",
+                "networking": "الشبكات",
+                "dataScience": "علوم البيانات"
+            }
+        },
+        "readTime": {
+            "label": "مدة القراءة",
+            "placeholder": "مثال: 5 دقائق قراءة"
+        },
+        "title": {
+            "label": "العنوان",
+            "placeholder": "أدخل عنوان المقال…"
+        },
+        "description": {
+            "label": "الوصف",
+            "placeholder": "اكتب ملخصًا قصيرًا للمقال…"
+        },
+        "image": {
+            "label": "رابط الصورة",
+            "placeholder": "https://example.com/image.jpg"
+        },
+        "date": {
+            "label": "تاريخ النشر"
+        }
+    },
+    "actions": {
+        "publish": "نشر المقال"
+    }
+}

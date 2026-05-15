@@ -1,0 +1,26 @@
+{
+    "brand": {
+        "name": "TechNews"
+    },
+    "navigation": {
+        "home": "Home",
+        "addNews": "Add News",
+        "login": "Login",
+        "register": "Register",
+        "signout": "Signout"
+    },
+    "search": {
+        "placeholder": "Search News..."
+    },
+    "actions": {
+        "subscribe": "Subscribe",
+        "toggleMenu": "Toggle Menu"
+    },
+    "toast": {
+        "logoutSuccess": "Logged Out Successfully"
+    },
+    "language": {
+        "english": "English",
+        "arabic": "العربية"
+    }
+}

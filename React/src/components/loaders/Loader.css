@@ -1,0 +1,19 @@
+.article-details-section {
+  padding: 60px 0;
+  min-height: 100vh;
+  background: var(--color-bg-body);
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.loading-text {
+  color: var(--color-primary);
+  font-family: inherit;
+  letter-spacing: 2px;
+  animation: pulse 1.5s infinite;
+}
