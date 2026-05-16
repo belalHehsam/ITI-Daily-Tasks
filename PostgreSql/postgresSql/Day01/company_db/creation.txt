@@ -1,0 +1,56 @@
+-- DEPARTMENTS table
+CREATE TABLE departments (
+  dept_id    SERIAL PRIMARY KEY,
+  dept_name  VARCHAR(100) NOT NULL UNIQUE,
+  location   VARCHAR(100),
+  budget     NUMERIC(15,2) DEFAULT 0.00,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+----------------------------------------------------------------------
+-- EMPLOYEES table
+CREATE TABLE employees (
+  emp_id       SERIAL PRIMARY KEY,
+  first_name   VARCHAR(50) NOT NULL,
+  last_name    VARCHAR(50) NOT NULL,
+  email        VARCHAR(150) UNIQUE NOT NULL,
+  phone        VARCHAR(20),
+  hire_date    DATE NOT NULL DEFAULT CURRENT_DATE,
+  salary       NUMERIC(10,2) CHECK (salary > 0),
+  dept_id      INTEGER REFERENCES departments(dept_id) ON DELETE SET NULL,
+  manager_id   INTEGER REFERENCES employees(emp_id),
+  is_active    BOOLEAN DEFAULT TRUE,
+  metadata     JSONB,
+  created_at   TIMESTAMPTZ DEFAULT NOW(),
+  updated_at   TIMESTAMPTZ DEFAULT NOW()
+);
+----------------------------------------------------------------------
+-- PROJECTS table
+CREATE TABLE projects (
+  project_id   SERIAL PRIMARY KEY,
+  project_name VARCHAR(200) NOT NULL,
+  start_date   DATE,
+  end_date     DATE,
+  budget       NUMERIC(15,2),
+  status       VARCHAR(20) DEFAULT 'planning'
+               CHECK (status IN ('planning','active','completed','cancelled')),
+  dept_id      INTEGER REFERENCES departments(dept_id)
+);
+----------------------------------------------------------------------
+-- EMPLOYEE_PROJECTS (junction table)
+CREATE TABLE employee_projects (
+  emp_id     INTEGER REFERENCES employees(emp_id) ON DELETE CASCADE,
+  project_id INTEGER REFERENCES projects(project_id) ON DELETE CASCADE,
+  role       VARCHAR(100),
+  hours      INTEGER DEFAULT 0,
+  PRIMARY KEY (emp_id, project_id)
+);
+----------------------------------------------------------------------
+-- SALARY_HISTORY table
+CREATE TABLE  salary_history (
+  history_id  SERIAL PRIMARY KEY,
+  emp_id      INTEGER REFERENCES employees(emp_id) ON DELETE CASCADE,
+  old_salary  NUMERIC(10,2),
+  new_salary  NUMERIC(10,2),
+  changed_at  TIMESTAMPTZ DEFAULT NOW(),
+  changed_by  VARCHAR(100)
+);
