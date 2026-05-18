@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Studio | Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="welcome-screen" id="welcome-screen">
+        <div class="welcome-content">
+            <header class="welcome-header">
+                <div class="logo-box">
+                    <img src="ai_logo.png" alt="AI Studio Logo" class="brand-logo">
+                    <span>Neuro<strong>Agent</strong></span>
+                </div>
+                <nav class="welcome-nav">
+                    <a href="#">Features</a>
+                    <a href="#">Capabilities</a>
+                    <a href="#">API</a>
+                    <a href="#">Docs</a>
+                </nav>
+                <button class="login-btn">Login / Register</button>
+            </header>
+
+            <main class="welcome-hero">
+                <div class="hero-text">
+                    <span class="badge">NEXT-GEN AI ASSISTANT</span>
+                    <h1>Meet Your Personal<br>Neural Agent</h1>
+                    <p>Experience the smartest, fastest, and most intuitive conversational AI. Our new agent adapts to
+                        your workflow, learns from your interactions, and helps you achieve more in less time.</p>
+                    <div class="hero-actions">
+                        <button class="primary-btn" id="start-chat-btn">Start Chatting</button>
+                        <button class="secondary-btn">View Capabilities ↗</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="ai_avatar.png" alt="AI Robot">
+                </div>
+            </main>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <i>🧠</i>
+                    <div>
+                        <h4>100B+</h4>
+                        <p>Parameters</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i>⚡</i>
+                    <div>
+                        <h4>&lt;10ms</h4>
+                        <p>Response Time</p>
+                    </div>
+                </div>
+                <div class="stat-box highlight">
+                    <i>🤖</i>
+                    <div>
+                        <h4>#1</h4>
+                        <p>Next-Gen Agent</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i>🔒</i>
+                    <div>
+                        <h4>100%</h4>
+                        <p>Secure & Private</p>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="app-footer">
+                <p>Created by <strong>Belal Hesham</strong></p>
+            </footer>
+        </div>
+    </div>
+
+    <div class="app-container" id="app-container" style="display: none;">
+        <aside class="sidebar">
+            <!-- Logo Section -->
+            <div class="sidebar-brand">
+                <div class="sidebar-logo-ring">
+                    <img src="ai_logo.png" alt="NeuroAgent Logo" class="brand-logo">
+                    <span class="sidebar-online-dot"></span>
+                </div>
+                <div class="sidebar-brand-text">
+                    <span class="sidebar-name">Neuro<strong>Agent</strong></span>
+                    <span class="sidebar-status-label">● Online</span>
+                </div>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <!-- Main Navigation -->
+            <p class="nav-section-label">MAIN</p>
+            <nav class="nav-items">
+                <div class="nav-item active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Neural Chat
+                </div>
+                <div class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    Knowledge Base
+                </div>
+                <div class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Image Studio
+                </div>
+                <div class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    Analytics
+                </div>
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <!-- Tools Navigation -->
+            <p class="nav-section-label">TOOLS</p>
+            <nav class="nav-items">
+                <div class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                    Favorites
+                </div>
+                <div class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    Explore Agents
+                </div>
+                <div class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    Prompt Library
+                </div>
+                <div class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg>
+                    Agent Settings
+                </div>
+            </nav>
+
+            <div class="sidebar-user-card">
+                <img src="user_avatar.png" alt="User" class="sidebar-user-avatar">
+                <div class="sidebar-user-info">
+                    <span class="sidebar-user-name">Belal Hesham</span>
+                    <span class="sidebar-user-role">Admin</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto; color:#9F97AD"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+            </div>
+        </aside>
+
+        <main class="chat-main">
+            <header class="chat-header">
+                <h2>AI Studio Assistant</h2>
+                <button class="new-chat-btn" id="new-chat-btn">New Chat</button>
+            </header>
+
+            <div id="messages-container" class="messages-container">
+            </div>
+
+            <div class="input-area">
+                <button id="mic-btn" class="icon-btn" title="Voice Input">🎤</button>
+                <input type="text" id="user-input" placeholder="Ask about products, orders, or pricing...">
+                <button id="send-btn" class="icon-btn">Send</button>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

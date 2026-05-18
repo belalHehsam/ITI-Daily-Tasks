@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="form-section">
+        <h2>Add Task</h2>
+
+        <form id="taskForm" (submit)="collectData()">
+            <input type="text" placeholder="Task Title" required [(ngModel)]="task.title" name="title" />
+            <textarea placeholder="Task Description" [(ngModel)]="task.description" name="description"></textarea>
+
+            <select [(ngModel)]="task.priority" name="priority">
+                <option value="" selected disabled>Select Priority</option>
+                <option value="Low">Low Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="High">High Priority</option>
+            </select>
+
+
+            <select [(ngModel)]="task.category" name="category">
+                <option value="" selected disabled>Select Category</option>
+                <option value="Work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="Study">Study</option>
+            </select>
+
+            <input type="date" [(ngModel)]="task.date" name="date" />
+
+            <input type="text" [(ngModel)]="task.tags" name="tags" placeholder="tags">
+
+            @if (error.status) {
+            <p class="bg-danger text-white text-center p-4 rounded-2 mx-auto w-100">{{error.message}}</p>
+            }
+
+            <button type="submit">Add Task</button>
+        </form>
+
+    </div>
+
+</div>

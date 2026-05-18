@@ -1,0 +1,23 @@
+<ul class="nav nav-tabs border-bottom-0">
+    <li class="nav-item">
+        <button class="nav-link border-0 fw-semibold" [class.active]="activeTab() === 'All'" (click)="selectTab('All')">
+            All ({{ allCount() }})
+        </button>
+    </li>
+
+    <li class="nav-item">
+        <button class="nav-link border-0 fw-semibold" [class.active]="activeTab() === 'Done'"
+            (click)="selectTab('Done')">
+            Done ({{ doneCount() }})
+        </button>
+    </li>
+
+    <li class="nav-item">
+        <button class="nav-link border-0 fw-semibold" [class.active]="activeTab() === 'Ongoing'"
+            (click)="selectTab('Ongoing')">
+            Ongoing ({{ ongoingCount()}})
+        </button>
+    </li>
+</ul>
+
+<hr class="mt-0">

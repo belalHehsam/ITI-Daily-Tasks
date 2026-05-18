@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+
+    <div class="container-fluid px-4">
+
+
+        <a class="navbar-brand fw-bold text-warning fs-3 d-flex align-items-center" href="#"
+            style="font-family: 'Arial Black', sans-serif;">
+            📋 MonoBoard
+        </a>
+
+
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                <li class="nav-item mx-2">
+                    <a class="nav-link  fw-semibold px-3 py-2 rounded-pill transition-all"
+                        routerLinkActive="bg-white text-warning  shadow-sm fw-bold" routerLink="/home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item mx-2">
+                    <a class="nav-link  fw-semibold px-3 py-2 rounded-pill transition-all"
+                        routerLinkActive="bg-white text-warning  shadow-sm fw-bold" routerLink="/add">
+                        Add Task
+                    </a>
+                </li>
+
+                <li class="nav-item mx-2">
+                    <a class="nav-link  fw-semibold px-3 py-2 rounded-pill transition-all"
+                        routerLinkActive="bg-white text-warning  shadow-sm fw-bold" routerLink="/list">
+                        Task List
+                    </a>
+                </li>
+
+
+                @if (login()) {
+                <li class="nav-item mx-2">
+                    <a class="nav-link bg-danger text-white fw-semibold px-3 py-2 rounded-pill" routerLink="/"
+                        (click)="logoutFun()">
+                        Logout
+                    </a>
+                </li>
+                }@else{
+                <li class="nav-item mx-2">
+                    <a class="nav-link  fw-semibold px-3 py-2 rounded-pill transition-all"
+                        routerLinkActive="bg-white text-warning  shadow-sm fw-bold" routerLink="/auth/login">
+                        Login
+                    </a>
+                </li>
+
+                <li class="nav-item mx-2">
+                    <a class="nav-link  fw-semibold px-3 py-2 rounded-pill transition-all"
+                        routerLinkActive="bg-white text-warning  shadow-sm fw-bold" routerLink="/auth/signUp">
+                        Sign Up
+                    </a>
+                </li>
+
+                }
+
+            </ul>
+
+            <!-- Right Side Info -->
+            <div class="d-flex align-items-center ms-auto">
+
+                <div class="d-none d-lg-block me-4">
+                    <span class="badge bg-white text-warning fw-semibold px-3 py-2 rounded-pill shadow-sm">
+                        ✨ Manage your tasks efficiently
+                    </span>
+                </div>
+
+                <div class="bg-white text-warning fw-bold px-3 py-2 rounded-pill shadow-sm">
+                    🕒 {{formattedTime}}
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>

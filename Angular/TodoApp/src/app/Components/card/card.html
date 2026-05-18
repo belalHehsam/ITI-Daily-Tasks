@@ -1,0 +1,91 @@
+<div class="card shadow-sm border-start border-4 mb-5 rounded-3" [class.border-danger]="task.priority === 'High'"
+    [class.border-warning]="task.priority === 'Medium'" [class.border-info]="task.priority === 'Low'"
+    [style.opacity]="task.isDone ? '0.6' : '1'">
+
+    <div class="card-body mb-4">
+        @if (!isEditing) {
+        <div class="d-flex justify-content-between align-items-start">
+
+            <div>
+                <h5 class="card-title fw-bold" [class.text-decoration-line-through]="task.isDone">
+                    {{ task.title }}
+                </h5>
+                <p class="card-text text-muted small">{{ task.description }}</p>
+            </div>
+
+            <span class="badge rounded-pill bg-light text-dark border">{{ task.date }}</span>
+        </div>
+
+        <div class="d-flex gap-2 mb-3 mt-2 align-items-center">
+            <span class="badge bg-secondary-subtle text-secondary">{{ task.category }}</span>
+            <span class="small text-muted">Priority: {{ task.priority }}</span>
+        </div>
+
+        <div class="d-flex flex-wrap gap-1 mb-3">
+            @for (tag of task.tags; track $index) {
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle">
+                #{{ tag }}
+            </span>
+            }
+        </div>
+
+        <div class="row g-2 mt-3">
+            <div class="col-4">
+                <button (click)="toggleClicked()" class="btn btn-sm w-100" [class.btn-success]="!task.isDone"
+                    [class.btn-secondary]="task.isDone">
+                    {{ task.isDone ? 'Undo' : 'Done' }}
+                </button>
+            </div>
+
+            <div class="col-4">
+                <button (click)="enableEditMode()" class="btn btn-sm btn-outline-primary w-100">Edit</button>
+            </div>
+
+            <div class="col-4">
+                <button (click)="deleteClicked()" class="btn btn-sm btn-outline-danger w-100">Delete</button>
+            </div>
+        </div>
+
+        } @else {
+
+        <div class="edit-mode-container">
+            <div class="mb-3">
+                <label class="form-label small text-muted">Title</label>
+                <input type="text" [(ngModel)]="tempTitle" class="form-control" placeholder="Task Title">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label small text-muted">Description</label>
+                <textarea [(ngModel)]="tempDescription" class="form-control" placeholder="Description"
+                    rows="2"></textarea>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label small text-muted">Priority</label>
+                    <select [(ngModel)]="tempPriority" class="form-select">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label small text-muted">Due Date</label>
+                    <input type="date" [(ngModel)]="tempDate" class="form-control">
+                </div>
+            </div>
+
+            <div class="row g-2 mt-2">
+                <div class="col-6">
+                    <button (click)="saveEdit()" class="btn btn-sm btn-primary w-100 py-2">Save</button>
+                </div>
+                <div class="col-6">
+                    <button (click)="cancelEdit()" class="btn btn-sm btn-outline-secondary w-100 py-2">Cancel</button>
+                </div>
+            </div>
+        </div>
+        }
+
+    </div>
+</div>

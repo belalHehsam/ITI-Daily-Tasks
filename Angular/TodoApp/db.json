@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "userName": "belal",
+      "email": "belalosman2410@gmail.com",
+      "phone": "01111404582",
+      "password": "Belal@123456",
+      "confirmPassword": "Belal@123456",
+      "id": "SNJaLUscQrQ"
+    },
+    {
+      "userName": "belal",
+      "email": "BelalReact@gmail.com",
+      "phone": "01111404582",
+      "password": "Belal@123456",
+      "confirmPassword": "Belal@123456",
+      "id": "oiHTRJpmxRI"
+    },
+    {
+      "userName": "belalHesham",
+      "email": "belalHeshaMOsman@gmail.com",
+      "phone": "01111404582",
+      "password": "Belal@123456789",
+      "confirmPassword": "Belal@123456789",
+      "id": "Bb7ETmzyjjQ"
+    },
+    {
+      "userName": "Belal Heham Osman",
+      "email": "belal@gmail.com",
+      "phone": "01111140457",
+      "password": "Belal@123456",
+      "confirmPassword": "Belal@123456",
+      "id": "ZXMLOq-atM8"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "SGuuw5hIKaE",
+      "title": "Angular",
+      "description": "asdadsadadasd",
+      "priority": "Medium",
+      "category": "personal",
+      "date": "2026-04-25",
+      "tags": "sad",
+      "isDone": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

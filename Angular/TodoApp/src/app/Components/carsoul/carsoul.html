@@ -1,0 +1,28 @@
+<div class="carousel-container">
+
+    <div class="carousel">
+
+        <img [src]="images[currentIndex]" class="main-image" alt="Carousel image">
+
+        <button (click)="prev()" class="left" aria-label="Previous image">❮</button>
+        <button (click)="next()" class="right" aria-label="Next image">❯</button>
+
+        <div class="indicators">
+            <span (click)="goTo(0)" [class.active]="currentIndex === 0"></span>
+            <span (click)="goTo(1)" [class.active]="currentIndex === 1"></span>
+            <span (click)="goTo(2)" [class.active]="currentIndex === 2"></span>
+            <span (click)="goTo(3)" [class.active]="currentIndex === 3"></span>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Boost Your Productivity</h1>
+            <p>
+                Plan your tasks, track your progress, and achieve your goals with ease.
+                Your journey to better organization starts here.
+            </p>
+            <button class="cta-btn">Get Started</button>
+        </div>
+    </div>
+</div>

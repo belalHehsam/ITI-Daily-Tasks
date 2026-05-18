@@ -1,0 +1,7 @@
+<div class="position-fixed top-0 end-0 p-3 z-3">
+    @for (noti of notifications(); track $index) {
+    <app-notification [message]="noti.message" [type]="noti.type"></app-notification>
+    }
+</div>
+
+<router-outlet></router-outlet>

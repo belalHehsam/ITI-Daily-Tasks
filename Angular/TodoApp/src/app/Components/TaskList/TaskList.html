@@ -1,0 +1,17 @@
+<div class="mt-5 container">
+    <h2 class="fw-bold mb-4">{{ currentFilter() }} Tasks</h2>
+
+    <app-tabs>
+    </app-tabs>
+
+    @for (taskItem of tasksArr(); track taskItem.id) {
+    <div class="col-12 mb-3">
+        <app-card [task]="taskItem">
+        </app-card>
+    </div>
+    } @empty {
+    <div class="text-center py-5">
+        <p class="text-muted">No tasks found in "{{ currentFilter() }}"</p>
+    </div>
+    }
+</div>

@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #111827;
+  color: #ffffff;
+  gap: 1.75rem;
+  padding: 3rem 1.25rem 0;
+}
+
+.form-section {
+  background-color: #18212f;
+  border: 1px solid #1e293b;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem 2.25rem;
+  margin: 0 auto;
+  width: min(100%, 980px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section h2 {
+  margin-bottom: 0;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+#taskForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  border: 1px solid #1e293b;
+  outline: none;
+  background-color: #111827;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b7280;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: #ffffff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.form-section button {
+  padding: 1rem 1.2rem;
+  border: none;
+  background-color: #3f46e1;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 16px 30px rgba(63, 70, 225, 0.18);
+}
+
+.form-section button:hover {
+  background-color: #ffffff;
+  color: #111827;
+  transform: translateY(-1px);
+  border: 2px solid #ffffff;
+}
+
+.form-section button:active {
+  transform: translateY(0);
+}
