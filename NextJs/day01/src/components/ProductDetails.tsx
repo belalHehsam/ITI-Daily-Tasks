@@ -110,7 +110,7 @@ export default function ProductDetails({
                   )}
                 </div>
               </div>
-              <button className="px-8 py-3.5 bg-gold-500 hover:bg-gold-600 text-black font-bold rounded-xl shadow-xs transition-all duration-200 transform active:scale-95">
+              <button className="px-8 py-3.5 bg-gold-gradient hover:bg-gold-gradient-hover text-black font-extrabold rounded-xl shadow-md transition-all duration-200 transform active:scale-95 cursor-pointer">
                 Add To Cart
               </button>
             </div>

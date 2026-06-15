@@ -59,7 +59,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
 
             <Link
               href={`/products/${product._id}`}
-              className="inline-flex items-center justify-center px-4 py-2.5 bg-zinc-900 hover:bg-gold-500 text-white hover:text-black text-sm font-bold rounded-xl shadow-xs transition-all duration-200 dark:bg-zinc-700 dark:hover:bg-gold-500"
+              className="inline-flex items-center justify-center px-4 py-2.5 bg-gold-gradient hover:bg-gold-gradient-hover text-black text-sm font-extrabold rounded-xl shadow-xs transition-all duration-200 hover:scale-103 active:scale-97 cursor-pointer"
             >
               Details
             </Link>

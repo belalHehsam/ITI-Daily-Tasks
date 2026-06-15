@@ -7,10 +7,16 @@ export default function Navbar() {
   const router = useRouter();
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const isActive = (path: string): boolean => router.pathname === path;
+
+  const isActive = (path: string): boolean => {
+    if (path === "/") {
+      return router.pathname === "/";
+    }
+    return router.pathname.startsWith(path);
+  };
 
   return (
-    <nav className="relative bg-zinc-900 text-white border-b border-card-border/10 transition-colors duration-300">
+    <nav className="relative bg-card border-b border-card-border text-foreground transition-colors duration-300 shadow-xs">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile menu button */}
@@ -18,13 +24,12 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-zinc-800 hover:text-white focus:outline-hidden"
+              className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-background hover:text-gold-500 focus:outline-hidden"
             >
               <span className="sr-only">Open main menu</span>
-              {/* أيقونة فتح المنيو */}
               {!isMobileMenuOpen ? (
                 <svg
-                  className="size-6"
+                  className="h-6 w-6"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -37,9 +42,8 @@ export default function Navbar() {
                   />
                 </svg>
               ) : (
-                /* أيقونة قفل المنيو */
                 <svg
-                  className="size-6"
+                  className="h-6 w-6"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -64,7 +68,7 @@ export default function Navbar() {
             >
               <img
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=amber&shade=500"
-                alt="Your Company"
+                alt="Store Logo"
                 className="h-8 w-auto filter drop-shadow-[0_0_4px_rgba(245,158,11,0.2)]"
               />
             </Link>
@@ -74,42 +78,57 @@ export default function Navbar() {
               <div className="flex space-x-4">
                 <Link
                   href="/"
-                  className={`rounded-xl px-3 py-2 text-sm font-bold transition-all duration-200 ${
+                  className={`rounded-xl px-4 py-2 text-sm font-extrabold transition-all duration-200 ${
                     isActive("/")
-                      ? "bg-gold-500 text-black shadow-xs"
-                      : "text-gray-300 hover:bg-zinc-800 hover:text-gold-400"
+                      ? "bg-gold-gradient text-black shadow-sm"
+                      : "text-gray-500 dark:text-gray-400 hover:bg-background hover:text-gold-500"
                   }`}
                 >
                   Home
                 </Link>
                 <Link
                   href="/products"
-                  className={`rounded-xl px-3 py-2 text-sm font-bold transition-all duration-200 ${
+                  className={`rounded-xl px-4 py-2 text-sm font-extrabold transition-all duration-200 ${
                     isActive("/products")
-                      ? "bg-gold-500 text-black shadow-xs"
-                      : "text-gray-300 hover:bg-zinc-800 hover:text-gold-400"
+                      ? "bg-gold-gradient text-black shadow-sm"
+                      : "text-gray-500 dark:text-gray-400 hover:bg-background hover:text-gold-500"
                   }`}
                 >
                   Products
                 </Link>
                 <Link
                   href="/admin"
-                  className="rounded-xl px-3 py-2 text-sm font-bold transition-all duration-200 text-gray-300 hover:bg-zinc-800 hover:text-gold-400"
+                  className={`rounded-xl px-4 py-2 text-sm font-extrabold transition-all duration-200 ${
+                    isActive("/admin")
+                      ? "bg-gold-gradient text-black shadow-sm"
+                      : "text-gray-500 dark:text-gray-400 hover:bg-background hover:text-gold-500"
+                  }`}
                 >
-                  Admin Dashboared
+                  Admin Dashboard
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Right Section: Notifications & Profile Dropdown */}
+          {/* Right Section: Light/Dark Toggle */}
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
-              className="relative rounded-full p-1 text-gray-400 hover:text-gold-400 focus:outline-hidden transition-colors"
+              className="relative rounded-xl p-2.5 text-gray-500 hover:text-gold-500 dark:text-gray-400 dark:hover:text-gold-400 hover:bg-background focus:outline-hidden transition-all cursor-pointer"
               onClick={() => toggleTheme()}
+              aria-label="Toggle Theme"
             >
-              {theme === "light" ? "🌙" : "☀️"}
+              {theme === "light" ? (
+                /* Moon Icon for Light mode (click to go dark) */
+                <svg className="h-5.5 w-5.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              ) : (
+                /* Sun Icon for Dark mode (click to go light) */
+                <svg className="h-5.5 w-5.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -117,14 +136,14 @@ export default function Navbar() {
 
       {/* Mobile Menu Content */}
       {isMobileMenuOpen && (
-        <div className="sm:hidden bg-zinc-950 border-t border-card-border/5 animate-in slide-in-from-top duration-200">
+        <div className="sm:hidden bg-card border-t border-card-border/5 animate-in slide-in-from-top duration-200">
           <div className="space-y-1 px-2 pt-2 pb-3">
             <Link
               href="/"
               className={`block rounded-lg px-3 py-2.5 text-base font-bold ${
                 isActive("/")
-                  ? "bg-gold-500 text-black"
-                  : "text-gray-300 hover:bg-zinc-800 hover:text-gold-400"
+                  ? "bg-gold-gradient text-black"
+                  : "text-gray-500 hover:bg-background hover:text-gold-500"
               }`}
             >
               Home
@@ -133,11 +152,21 @@ export default function Navbar() {
               href="/products"
               className={`block rounded-lg px-3 py-2.5 text-base font-bold ${
                 isActive("/products")
-                  ? "bg-gold-500 text-black"
-                  : "text-gray-300 hover:bg-zinc-800 hover:text-gold-400"
+                  ? "bg-gold-gradient text-black"
+                  : "text-gray-500 hover:bg-background hover:text-gold-500"
               }`}
             >
               Products
+            </Link>
+            <Link
+              href="/admin"
+              className={`block rounded-lg px-3 py-2.5 text-base font-bold ${
+                isActive("/admin")
+                  ? "bg-gold-gradient text-black"
+                  : "text-gray-500 hover:bg-background hover:text-gold-500"
+              }`}
+            >
+              Admin Dashboard
             </Link>
           </div>
         </div>
