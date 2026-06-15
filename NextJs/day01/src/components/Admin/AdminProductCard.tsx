@@ -1,11 +1,15 @@
+import { KeyedMutator } from "swr";
 import { IProduct } from "../types/product";
 import AdminActions from "./AdminActions";
 
 interface AdminProductCardProps {
   product: IProduct;
+  mutate: KeyedMutator<any>;
 }
-
-export default function AdminProductCard({ product }: AdminProductCardProps) {
+export default function AdminProductCard({
+  product,
+  mutate,
+}: AdminProductCardProps) {
   return (
     <div className="bg-card border border-card-border rounded-xl p-4 flex items-center justify-between gap-4">
       <div className="flex items-center gap-4">
@@ -24,7 +28,7 @@ export default function AdminProductCard({ product }: AdminProductCardProps) {
         </div>
       </div>
 
-      <AdminActions id={product._id} />
+      <AdminActions id={product._id} mutate={mutate} />
     </div>
   );
 }
