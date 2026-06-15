@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
 import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
@@ -15,17 +16,21 @@ type AppPropsWithLayout = AppProps & {
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   if (Component.getLayout) {
-    return <>{Component.getLayout(<Component {...pageProps} />)}</>;
+    <ThemeProvider>
+      return <>{Component.getLayout(<Component {...pageProps} />)}</>;
+    </ThemeProvider>;
   }
 
   return (
     <>
-      <Navbar />
-      <Toaster position="top-right" />
+      <ThemeProvider>
+        <Navbar />
+        <Toaster position="top-right" />
 
-      <main className="bg-background min-h-screen text-foreground transition-colors duration-300">
-        <Component {...pageProps} />
-      </main>
+        <main className="bg-background min-h-screen text-foreground transition-colors duration-300">
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
     </>
   );
 }

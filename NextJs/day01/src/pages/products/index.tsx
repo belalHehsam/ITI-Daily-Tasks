@@ -1,16 +1,14 @@
 import Products from "@/components/Products";
-import React from "react";
 import { GetStaticProps } from "next";
-import { Product } from "@/components/types/product";
+import { IProduct } from "@/components/types/product";
+import dbConnect from "@/lib/mongodb";
+import Product from "@/models/product";
 
-// تعريف الـ Types للـ Props الخاصة بالصفحة
 interface ProductsIndexProps {
-  products: Product[];
+  products: IProduct[];
 }
 
-export default function ProductsIndex({
-  products,
-}: ProductsIndexProps): React.JSX.Element {
+export default function ProductsIndex({ products }: ProductsIndexProps) {
   return (
     <div className="bg-background min-h-screen transition-colors duration-300">
       <Products products={products} />
@@ -20,24 +18,17 @@ export default function ProductsIndex({
 
 export const getStaticProps: GetStaticProps<ProductsIndexProps> = async () => {
   try {
-    const res = await fetch("https://dummyjson.com/products");
+    await dbConnect();
 
-    if (!res.ok) {
-      return {
-        props: { products: [] },
-      };
-    }
-
-    const data = await res.json();
-
+    const products = await Product.find().lean();
     return {
       props: {
-        products: data.products || [],
+        products: JSON.parse(JSON.stringify(products)) || [],
       },
-      revalidate: 3600,
+      revalidate: 3600, ///ISR
     };
   } catch (err) {
-    console.error("Error in getStaticProps within products/index:", err);
+    console.error("Error in getStaticProps within products/indexxxx:", err);
     return {
       props: {
         products: [],

@@ -1,7 +1,7 @@
 import React from "react";
-import { Product } from "../components/types/product";
+import { IProduct } from "../components/types/product";
 interface ProductDetailsProps {
-  product: Product | null;
+  product: IProduct | null;
 }
 
 export default function ProductDetails({

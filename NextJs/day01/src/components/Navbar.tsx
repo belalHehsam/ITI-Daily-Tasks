@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Navbar() {
   const router = useRouter();
-
+  const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-
   const isActive = (path: string): boolean => router.pathname === path;
 
   return (
@@ -92,31 +92,24 @@ export default function Navbar() {
                 >
                   Products
                 </Link>
+                <Link
+                  href="/admin"
+                  className="rounded-xl px-3 py-2 text-sm font-bold transition-all duration-200 text-gray-300 hover:bg-zinc-800 hover:text-gold-400"
+                >
+                  Admin Dashboared
+                </Link>
               </div>
             </div>
           </div>
 
           {/* Right Section: Notifications & Profile Dropdown */}
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            {/* Notification Button */}
             <button
               type="button"
               className="relative rounded-full p-1 text-gray-400 hover:text-gold-400 focus:outline-hidden transition-colors"
+              onClick={() => toggleTheme()}
             >
-              <span className="sr-only">View notifications</span>
-              <svg
-                className="size-6"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              {theme === "light" ? "🌙" : "☀️"}
             </button>
           </div>
         </div>

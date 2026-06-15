@@ -6,8 +6,8 @@ export interface Review {
   reviewerEmail: string;
 }
 
-export interface Product {
-  id: number;
+export interface IProduct {
+  _id: string;
   title: string;
   description: string;
   category: string;

@@ -1,8 +1,10 @@
 import ProductDetails from "@/components/ProductDetails";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Product } from "@/components/types/product";
+import { IProduct } from "@/components/types/product";
+import dbConnect from "@/lib/mongodb";
+import Product from "@/models/product";
 interface ProductPageProps {
-  product: Product;
+  product: IProduct;
 }
 
 export default function Id({ product }: ProductPageProps) {
@@ -14,37 +16,35 @@ export default function Id({ product }: ProductPageProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [
-      { params: { id: "1" } },
-      { params: { id: "2" } },
-      { params: { id: "3" } },
-      { params: { id: "4" } },
-    ],
-    fallback: "blocking",
-  };
+  await dbConnect();
+  const products = await Product.find({}, "_id").lean();
+
+  const paths = products.map((p) => {
+    return {
+      params: { id: p._id.toString() },
+    };
+  });
+
+  return { paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps<ProductPageProps> = async (
   context,
 ) => {
+  await dbConnect();
   const { params } = context;
 
   if (!params || typeof params.id !== "string") {
     return { notFound: true };
   }
 
-  const res = await fetch(`https://dummyjson.com/products/${params.id}`);
+  const product = await Product.findById(params.id).lean();
 
-  if (!res.ok) {
-    return { notFound: true };
-  }
-
-  const data: Product = await res.json();
+  if (!product) return { notFound: true };
 
   return {
     props: {
-      product: data,
+      product: JSON.parse(JSON.stringify(product)),
     },
   };
 };
