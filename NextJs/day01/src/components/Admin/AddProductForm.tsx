@@ -32,7 +32,7 @@ export default function AddProductForm() {
   const [isSaving, setIsSaving] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -42,7 +42,9 @@ export default function AddProductForm() {
         name === "discountPercentage" ||
         name === "rating" ||
         name === "stock"
-          ? value === "" ? "" : Number(value)
+          ? value === ""
+            ? ""
+            : Number(value)
           : value,
     }));
   };
@@ -65,7 +67,8 @@ export default function AddProductForm() {
     }
     if (
       formData.discountPercentage !== "" &&
-      (Number(formData.discountPercentage) < 0 || Number(formData.discountPercentage) > 100)
+      (Number(formData.discountPercentage) < 0 ||
+        Number(formData.discountPercentage) > 100)
     ) {
       toast.error("Discount must be between 0 and 100");
       return;
@@ -94,7 +97,10 @@ export default function AddProductForm() {
     const createPromise = new Promise(async (resolve, reject) => {
       try {
         const imagesArray = formData.images
-          ? formData.images.split(",").map((img) => img.trim()).filter(Boolean)
+          ? formData.images
+              .split(",")
+              .map((img) => img.trim())
+              .filter(Boolean)
           : [];
 
         const bodyData = {
@@ -137,7 +143,10 @@ export default function AddProductForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-4xl mx-auto animate-in fade-in duration-300">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-6 max-w-4xl mx-auto animate-in fade-in duration-300"
+    >
       <div className="bg-card border border-card-border rounded-2xl p-6 sm:p-8 shadow-xs space-y-6">
         <h2 className="text-xl font-bold text-foreground border-b border-card-border pb-4">
           Product Details
@@ -145,7 +154,10 @@ export default function AddProductForm() {
 
         {/* Title */}
         <div className="flex flex-col gap-2">
-          <label htmlFor="title" className="text-sm font-semibold text-foreground">
+          <label
+            htmlFor="title"
+            className="text-sm font-semibold text-foreground"
+          >
             Product Title <span className="text-red-500">*</span>
           </label>
           <input
@@ -162,7 +174,10 @@ export default function AddProductForm() {
 
         {/* Description */}
         <div className="flex flex-col gap-2">
-          <label htmlFor="description" className="text-sm font-semibold text-foreground">
+          <label
+            htmlFor="description"
+            className="text-sm font-semibold text-foreground"
+          >
             Description <span className="text-red-500">*</span>
           </label>
           <textarea
@@ -180,7 +195,10 @@ export default function AddProductForm() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Price */}
           <div className="flex flex-col gap-2">
-            <label htmlFor="price" className="text-sm font-semibold text-foreground">
+            <label
+              htmlFor="price"
+              className="text-sm font-semibold text-foreground"
+            >
               Price ($) <span className="text-red-500">*</span>
             </label>
             <input
@@ -198,7 +216,10 @@ export default function AddProductForm() {
 
           {/* Discount Percentage */}
           <div className="flex flex-col gap-2">
-            <label htmlFor="discountPercentage" className="text-sm font-semibold text-foreground">
+            <label
+              htmlFor="discountPercentage"
+              className="text-sm font-semibold text-foreground"
+            >
               Discount Percentage (%)
             </label>
             <input
@@ -215,7 +236,10 @@ export default function AddProductForm() {
 
           {/* Stock */}
           <div className="flex flex-col gap-2">
-            <label htmlFor="stock" className="text-sm font-semibold text-foreground">
+            <label
+              htmlFor="stock"
+              className="text-sm font-semibold text-foreground"
+            >
               Stock <span className="text-red-500">*</span>
             </label>
             <input
@@ -234,7 +258,10 @@ export default function AddProductForm() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Category */}
           <div className="flex flex-col gap-2">
-            <label htmlFor="category" className="text-sm font-semibold text-foreground">
+            <label
+              htmlFor="category"
+              className="text-sm font-semibold text-foreground"
+            >
               Category <span className="text-red-500">*</span>
             </label>
             <input
@@ -251,7 +278,10 @@ export default function AddProductForm() {
 
           {/* Brand */}
           <div className="flex flex-col gap-2">
-            <label htmlFor="brand" className="text-sm font-semibold text-foreground">
+            <label
+              htmlFor="brand"
+              className="text-sm font-semibold text-foreground"
+            >
               Brand
             </label>
             <input
@@ -267,7 +297,10 @@ export default function AddProductForm() {
 
           {/* Rating */}
           <div className="flex flex-col gap-2">
-            <label htmlFor="rating" className="text-sm font-semibold text-foreground">
+            <label
+              htmlFor="rating"
+              className="text-sm font-semibold text-foreground"
+            >
               Rating (0 - 5)
             </label>
             <input
@@ -285,7 +318,10 @@ export default function AddProductForm() {
 
         {/* Thumbnail URL */}
         <div className="flex flex-col gap-2">
-          <label htmlFor="thumbnail" className="text-sm font-semibold text-foreground">
+          <label
+            htmlFor="thumbnail"
+            className="text-sm font-semibold text-foreground"
+          >
             Thumbnail URL <span className="text-red-500">*</span>
           </label>
           <input
@@ -302,7 +338,10 @@ export default function AddProductForm() {
 
         {/* Images URLs */}
         <div className="flex flex-col gap-2">
-          <label htmlFor="images" className="text-sm font-semibold text-foreground">
+          <label
+            htmlFor="images"
+            className="text-sm font-semibold text-foreground"
+          >
             Image URLs (comma separated)
           </label>
           <textarea

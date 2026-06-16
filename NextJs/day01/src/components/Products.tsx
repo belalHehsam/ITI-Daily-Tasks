@@ -6,9 +6,13 @@ import ProductsFilters from "./ProductsFilters";
 
 interface ProductsProps {
   products: IProduct[];
+  showFilters?: boolean;
 }
 
-export default function Products({ products }: ProductsProps) {
+export default function Products({
+  products,
+  showFilters = true,
+}: ProductsProps) {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("");
@@ -19,7 +23,10 @@ export default function Products({ products }: ProductsProps) {
   const filteredProducts = products
     .filter((product) => {
       // Category filter
-      if (selectedCategory !== "all" && product.category.toLowerCase() !== selectedCategory.toLowerCase()) {
+      if (
+        selectedCategory !== "all" &&
+        product.category.toLowerCase() !== selectedCategory.toLowerCase()
+      ) {
         return false;
       }
       // Search filter (matches title or description)
@@ -57,15 +64,17 @@ export default function Products({ products }: ProductsProps) {
 
   return (
     <>
-      <ProductsFilters
-        search={search}
-        setSearch={setSearch}
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        sortBy={sortBy}
-        setSortBy={setSortBy}
-        categories={categories}
-      />
+      {showFilters && (
+        <ProductsFilters
+          search={search}
+          setSearch={setSearch}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          categories={categories}
+        />
+      )}
 
       {filteredProducts.length === 0 ? (
         <div className="text-center py-20 text-gray-500 font-medium bg-background">

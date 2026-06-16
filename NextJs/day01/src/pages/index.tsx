@@ -1,3 +1,4 @@
+import HomeFeatured from "@/components/HomeFeatured";
 import HomeHero from "@/components/HomeHero";
 import { GetServerSideProps } from "next";
 
@@ -15,6 +16,7 @@ export default function Home({ initialQuote }: HomeProps) {
   return (
     <div>
       <HomeHero />
+      <HomeFeatured />
     </div>
   );
 }

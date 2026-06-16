@@ -6,7 +6,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
     <>
       {/* Product Image & Brand Tag */}
       <div className="group relative bg-card rounded-2xl shadow-xs border border-card-border overflow-hidden flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div className="relative w-full h-56 bg-background/50 dark:bg-zinc-950/40 overflow-hidden flex items-center justify-center p-4">
+        <div className="relative w-full bg-background/50 dark:bg-zinc-950/40 overflow-hidden flex items-center justify-center p-4">
           <img
             src={product.thumbnail}
             alt={product.title}

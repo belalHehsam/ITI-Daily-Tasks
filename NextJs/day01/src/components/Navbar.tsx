@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "@/context/ThemeContext";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Navbar() {
   const router = useRouter();
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+
+  const { data: session, status } = useSession();
+  const isAuthenticated = status === "authenticated";
 
   const isActive = (path: string): boolean => {
     if (path === "/") {
@@ -36,9 +40,9 @@ export default function Navbar() {
                   strokeWidth="1.5"
                 >
                   <path
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                   />
                 </svg>
               ) : (
@@ -50,9 +54,9 @@ export default function Navbar() {
                   strokeWidth="1.5"
                 >
                   <path
-                    d="M6 18 18 6M6 6l12 12"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
                   />
                 </svg>
               )}
@@ -75,7 +79,7 @@ export default function Navbar() {
 
             {/* Desktop Navigation Links */}
             <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 justify-center items-center">
                 <Link
                   href="/"
                   className={`rounded-xl px-4 py-2 text-sm font-extrabold transition-all duration-200 ${
@@ -86,32 +90,47 @@ export default function Navbar() {
                 >
                   Home
                 </Link>
-                <Link
-                  href="/products"
-                  className={`rounded-xl px-4 py-2 text-sm font-extrabold transition-all duration-200 ${
-                    isActive("/products")
-                      ? "bg-gold-gradient text-black shadow-sm"
-                      : "text-gray-500 dark:text-gray-400 hover:bg-background hover:text-gold-500"
-                  }`}
-                >
-                  Products
-                </Link>
-                <Link
-                  href="/admin"
-                  className={`rounded-xl px-4 py-2 text-sm font-extrabold transition-all duration-200 ${
-                    isActive("/admin")
-                      ? "bg-gold-gradient text-black shadow-sm"
-                      : "text-gray-500 dark:text-gray-400 hover:bg-background hover:text-gold-500"
-                  }`}
-                >
-                  Admin Dashboard
-                </Link>
+
+                {isAuthenticated ? (
+                  <Link
+                    href="/products"
+                    className={`rounded-xl px-4 py-2 text-sm font-extrabold transition-all duration-200 ${
+                      isActive("/products")
+                        ? "bg-gold-gradient text-black shadow-sm"
+                        : "text-gray-500 dark:text-gray-400 hover:bg-background hover:text-gold-500"
+                    }`}
+                  >
+                    Products
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => signIn()}
+                    className="w-full text-left block rounded-lg px-3 py-2.5 text-base font-bold text-gray-500 hover:bg-background hover:text-gold-500 cursor-pointer"
+                  >
+                    Products
+                  </button>
+                )}
+
+                {/* 3. شرط إظهار الـ Admin Dashboard فقط إذا كان مسجل دخول */}
+                {isAuthenticated && (
+                  <Link
+                    href="/admin"
+                    className={`rounded-xl px-4 py-2 text-sm font-extrabold transition-all duration-200 ${
+                      isActive("/admin")
+                        ? "bg-gold-gradient text-black shadow-sm"
+                        : "text-gray-500 dark:text-gray-400 hover:bg-background hover:text-gold-500"
+                    }`}
+                  >
+                    Admin Dashboard
+                  </Link>
+                )}
               </div>
             </div>
           </div>
 
-          {/* Right Section: Light/Dark Toggle */}
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          {/* Right Section: Light/Dark Toggle & Auth Buttons */}
+          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 space-x-2">
+            {/* Theme Toggle Button */}
             <button
               type="button"
               className="relative rounded-xl p-2.5 text-gray-500 hover:text-gold-500 dark:text-gray-400 dark:hover:text-gold-400 hover:bg-background focus:outline-hidden transition-all cursor-pointer"
@@ -119,17 +138,64 @@ export default function Navbar() {
               aria-label="Toggle Theme"
             >
               {theme === "light" ? (
-                /* Moon Icon for Light mode (click to go dark) */
-                <svg className="h-5.5 w-5.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                <svg
+                  className="h-5.5 w-5.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
                 </svg>
               ) : (
-                /* Sun Icon for Dark mode (click to go light) */
-                <svg className="h-5.5 w-5.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                <svg
+                  className="h-5.5 w-5.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"
+                  />
                 </svg>
               )}
             </button>
+
+            {status !== "loading" && (
+              <>
+                {!isAuthenticated ? (
+                  <button
+                    onClick={() => signIn()}
+                    className="rounded-xl bg-gold-gradient text-black px-4 py-2 text-sm font-extrabold shadow-sm hover:opacity-90 transition-all cursor-pointer"
+                  >
+                    Sign In
+                  </button>
+                ) : (
+                  <div className="flex items-center space-x-3">
+                    {session?.user?.image && (
+                      <img
+                        src={session.user.image}
+                        alt="Profile"
+                        className="h-8 w-8 rounded-full border border-gold-500"
+                      />
+                    )}
+                    <button
+                      onClick={() => signOut()}
+                      className="rounded-xl border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-extrabold hover:bg-background transition-all cursor-pointer text-gray-500 dark:text-gray-400 hover:text-gold-500"
+                    >
+                      Sign Out
+                    </button>
+                  </div>
+                )}
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -148,6 +214,7 @@ export default function Navbar() {
             >
               Home
             </Link>
+
             <Link
               href="/products"
               className={`block rounded-lg px-3 py-2.5 text-base font-bold ${
@@ -158,16 +225,19 @@ export default function Navbar() {
             >
               Products
             </Link>
-            <Link
-              href="/admin"
-              className={`block rounded-lg px-3 py-2.5 text-base font-bold ${
-                isActive("/admin")
-                  ? "bg-gold-gradient text-black"
-                  : "text-gray-500 hover:bg-background hover:text-gold-500"
-              }`}
-            >
-              Admin Dashboard
-            </Link>
+
+            {isAuthenticated && (
+              <Link
+                href="/admin"
+                className={`block rounded-lg px-3 py-2.5 text-base font-bold ${
+                  isActive("/admin")
+                    ? "bg-gold-gradient text-black"
+                    : "text-gray-500 hover:bg-background hover:text-gold-500"
+                }`}
+              >
+                Admin Dashboard
+              </Link>
+            )}
           </div>
         </div>
       )}
